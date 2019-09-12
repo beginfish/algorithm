@@ -39,8 +39,7 @@ public class QuickSort {
 	}
 	
 	public static void main(String[] args) {
-		int[] data = {1,6,5,3,7,4,2};
-		//int[] data = {1,2,3,4,5,6,7};
+		int[] data = {9,1,5,3,7,4,2};
 		System.out.println("before:"+Arrays.toString(data));
 		sort(data);
 		System.out.println("after:"+Arrays.toString(data));

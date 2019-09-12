@@ -3,23 +3,26 @@ package com.bamdow.algorithm;
 import java.util.Arrays;
 
 /**
- * 插入排序
+ * 希尔排序
  * @author Bamboo
  *
  */
-public class InsertionSort {
+public class ShellSort {
 
 	public static void sort(int[] data){
 		assert data!=null ? true:false;
 		int len = data.length;
-		for(int i=1;i<len; i++){
-			for(int j=i-1;j>=0 && data[j] > data[j+1];j--){
+		for(int gap=len/2;gap>0; gap/=2){
+			for(int i=gap;i<len; i++){
+				for(int j=i-gap;j >= 0 && data[j] > data[j+gap];j-=gap){
 					int temp = data[j];
-					data[j] = data[j+1];
-					data[j+1] = temp;
+					data[j] = data[j+gap];
+					data[j+gap] = temp;
+				}
+				System.out.println("i:"+i+"="+Arrays.toString(data));
 			}
-			System.out.println("i:"+i+"="+Arrays.toString(data));
 		}
+
 	}
 	
 	public static void main(String[] args) {
